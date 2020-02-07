@@ -1,0 +1,71 @@
+GITHUB URl :  https://github.com/HARI231564/HARI.git
+
+
+AM  : public, protected, <default>, private
+
+NAM : final, abstract, strictfp, static, synchronized, native,
+      transient, volatile
+
+
+AM NAM class ClassName
+{
+    AM NAM int a = 10;
+
+    AM NAM void m1()
+    {
+      -------
+    }
+}
+
+class/AM  : public , <default>
+class/NAM : final, abstract, strictfp
+
+
+method/AM  : public, protected, <default>, private
+method/NAM : final, abstract, strictfp, static, synchronized, native
+
+
+variable/AM  : public, protected, <default>, private
+variable/NAM : final,static, transient, volatile
+
+
+
+
+static method()
+{
+    staticfamily(variable/method) : either directly or indirectly with
+                                    Classname
+
+    instancefamily(variable/method) : Through Class Object 
+}
+
+
+instance method()
+{
+    staticfamily(variable/method) : either directly or indirectly with
+                                    Classname
+
+    instancefamily(variable/method) : Dirctly
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
