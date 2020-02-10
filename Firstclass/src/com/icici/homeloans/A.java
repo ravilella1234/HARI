@@ -1,6 +1,6 @@
 package com.icici.homeloans;
 
-public strictfp class A 
+public  class A 
 {
 	public void m1()
 	{

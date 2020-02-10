@@ -5,6 +5,7 @@ public class VariableTypes
 	//primitive Variable
 	int x=10; // instance (or) global (or) non-static varaiable
 	static String cname="vmware"; // static varibale
+	static VariableTypes obj;
 	
 	public void m1()
 	{
@@ -15,14 +16,14 @@ public class VariableTypes
 	
 	public static void m5()
 	{
-		VariableTypes obj=new VariableTypes();
+		obj=new VariableTypes();
 		System.out.println(obj.x);
 		System.out.println(cname);
 	}
 
 	public static void main(String[] args) 
 	{
-		VariableTypes obj=new VariableTypes();
+		obj=new VariableTypes();
 		System.out.println(obj.x);
 		System.out.println(VariableTypes.cname);
 	}

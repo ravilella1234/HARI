@@ -9,8 +9,10 @@ public class C extends A
 		System.out.println("iam m3 from Class C");
 	}
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) 
+	{
 		C c=new C();
+		c.m1();
 		c.m3();
 	}
 
