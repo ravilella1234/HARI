@@ -2,6 +2,7 @@ package com.icici.homeloans;
 
 public class B extends A
 {
+	
 	public void m1()
 	{
 		System.out.println("iam overriden m1 from Class B");
@@ -14,10 +15,10 @@ public class B extends A
 	
 	public static void main(String[] args) 
 	{
-		int i=10;
-		
+				
 		A a=new A();
 		a.m1();
+		System.out.println(a.x);
 		
 		A obj=new B();
 		obj.m1();
@@ -27,7 +28,7 @@ public class B extends A
 		B b=new B();
 		b.m1();
 		b.m2();
-		
+		System.out.println(b.x);
 		
 	}
 }
