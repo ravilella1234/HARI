@@ -2,23 +2,54 @@ package com.icici.loans.personalloans;
 
 public class Employee 
 {
-	
 	int eno;
 	String ename;
+	float sal;
+	
+
+	
+	  public Employee() { System.out.println("iam default constructor...");
+	  
+	  System.out.println(this.eno); System.out.println(this.ename);
+	  System.out.println(this.sal); }
+	 
+
+	public Employee(int eno) {
+		this();
+		this.eno=eno;
+		
+		System.out.println(this.eno);
+		System.out.println(this.ename);
+		System.out.println(this.sal);
+	}
+	
+	public Employee(int eno, String ename) {
+		this(1744);
+		this.eno=eno;
+		this.ename=ename;
+		
+		System.out.println(this.eno);
+		System.out.println(this.ename);
+		System.out.println(this.sal);
+	}
+
+	public Employee(int eno, String ename, float sal) 
+	{
+		this(1745,"ravilella");
+		this.eno=eno;
+		this.ename=ename;
+		this.sal=sal;
+		
+		System.out.println(this.eno);
+		System.out.println(this.ename);
+		System.out.println(this.sal);
+	}
 
 	public static void main(String[] args) 
 	{
-		Employee e1=new Employee();
-		e1.eno=1744;
-		e1.ename="ravilella";
-		System.out.println(e1.eno);
-		System.out.println(e1.ename);
+
+		Employee e4=new Employee(1746,"keerthan",23.34f);
 		
-		Employee e2=new Employee();
-		e2.eno=1745;
-		e2.ename="keerthan";
-		System.out.println(e2.eno);
-		System.out.println(e2.ename);
 	}
 
 }
