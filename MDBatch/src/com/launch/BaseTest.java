@@ -13,19 +13,39 @@ public class BaseTest
 	public static WebDriver driver;
 	public static FileInputStream fis;
 	public static Properties p;
+	public static Properties mainProp;
+	public static Properties subProp;
+	public static String projectPath=System.getProperty("user.dir");
 	
 	public static void init() throws Exception
 	{
-		fis=new FileInputStream("D:\\Feb-2020 Working Directory\\MDBatch\\data.properties");
+		System.out.println(projectPath);
+		fis=new FileInputStream(projectPath+"\\data.properties");
 		p=new Properties();
 		p.load(fis);
+		
+		fis=new FileInputStream(projectPath+"\\environment.properties");
+		mainProp=new Properties();
+		mainProp.load(fis);
+		String e = mainProp.getProperty("env");
+		System.out.println(e);
+		
+		fis=new FileInputStream(projectPath+"\\"+e+".properties");
+		subProp=new Properties();
+		subProp.load(fis);
+		String val = subProp.getProperty("amazonurl");
+		System.out.println(val);
 	}
 	
 	public static void browserLaunch(String browser)
 	{
 		if(p.getProperty(browser).equals("chrome")) {
+			//System.setProperty("webdriver.chrome.driver", "C:\\Users\\DELL\\Desktop\\drive\\chromedriver.exe");
+			System.setProperty("webdriver.chrome.driver", projectPath+"\\drivers\\chromedriver.exe");
 			driver=new ChromeDriver();
 		}else if(p.getProperty(browser).equals("firefox")) {
+			//System.setProperty("webdriver.gecko.driver", "C:\\Users\\DELL\\Desktop\\drive\\geckodriver.exe");
+			System.setProperty("webdriver.gecko.driver", projectPath+"\\drivers\\geckodriver.exe");
 			driver=new FirefoxDriver();
 		}	
 	}
@@ -33,7 +53,9 @@ public class BaseTest
 	
 	public static void navigateUrl(String url)
 	{
-		driver.get(p.getProperty(url));
+		//driver.get(subProp.getProperty(url));
+		driver.navigate().to(subProp.getProperty(url));
+		
 	}
 	
 
