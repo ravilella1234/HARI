@@ -4,7 +4,9 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.util.Properties;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -73,6 +75,48 @@ public class BaseTest
 		//driver.get(subProp.getProperty(url));
 		driver.navigate().to(subProp.getProperty(url));
 		
+	}
+	
+	
+	public static void clickElement(String locatorKey) 
+	{
+		//driver.findElement(By.xpath(mainProp.getProperty(locatorKey))).click();
+		getElement(locatorKey).click();
+	}
+
+	public static WebElement getElement(String locatorKey) 
+	{
+		WebElement element=null;
+		
+		if(locatorKey.endsWith("_id")) {
+			element=driver.findElement(By.id(mainProp.getProperty(locatorKey)));
+		}else if(locatorKey.endsWith("_name")) {
+			element=driver.findElement(By.name(mainProp.getProperty(locatorKey)));
+		}else if(locatorKey.endsWith("_name")) {
+			element=driver.findElement(By.name(mainProp.getProperty(locatorKey)));
+		}else if(locatorKey.endsWith("_classname")) {
+			element=driver.findElement(By.className(mainProp.getProperty(locatorKey)));
+		}else if(locatorKey.endsWith("_xpath")) {
+			element=driver.findElement(By.xpath(mainProp.getProperty(locatorKey)));
+		}else if(locatorKey.endsWith("_css")) {
+			element=driver.findElement(By.cssSelector(mainProp.getProperty(locatorKey)));
+		}
+		
+		
+		return element;
+		
+	}
+
+	public static void type(String locatorKey, String value) 
+	{
+		//driver.findElement(By.name(mainProp.getProperty(locatorKey))).sendKeys(value);
+		getElement(locatorKey).sendKeys(value);
+	}
+
+	public static void selectOption(String locatorKey, String option) 
+	{
+		//driver.findElement(By.id(mainProp.getProperty(locatorKey))).sendKeys(option);
+		getElement(locatorKey).sendKeys(option);
 	}
 	
 
