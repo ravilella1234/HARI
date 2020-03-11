@@ -4,6 +4,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.util.Properties;
 
+import org.apache.log4j.PropertyConfigurator;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -14,6 +15,9 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.firefox.ProfilesIni;
 
+import com.relevantcodes.extentreports.ExtentReports;
+import com.relevantcodes.extentreports.ExtentTest;
+
 public class BaseTest 
 {
 	public static WebDriver driver;
@@ -22,6 +26,9 @@ public class BaseTest
 	public static Properties mainProp;
 	public static Properties subProp;
 	public static String projectPath=System.getProperty("user.dir");
+	
+	public static ExtentReports report = ExtentManager.getInstance();
+	public static ExtentTest test;
 	
 	public static void init() throws Exception
 	{
@@ -41,6 +48,11 @@ public class BaseTest
 		subProp.load(fis);
 		String val = subProp.getProperty("amazonurl");
 		System.out.println(val);
+		
+		fis=new FileInputStream(projectPath+"\\log4jconfig.properties");
+		PropertyConfigurator.configure(fis);
+		
+
 	}
 	
 	public static void browserLaunch(String browser)
@@ -92,8 +104,6 @@ public class BaseTest
 			element=driver.findElement(By.id(mainProp.getProperty(locatorKey)));
 		}else if(locatorKey.endsWith("_name")) {
 			element=driver.findElement(By.name(mainProp.getProperty(locatorKey)));
-		}else if(locatorKey.endsWith("_name")) {
-			element=driver.findElement(By.name(mainProp.getProperty(locatorKey)));
 		}else if(locatorKey.endsWith("_classname")) {
 			element=driver.findElement(By.className(mainProp.getProperty(locatorKey)));
 		}else if(locatorKey.endsWith("_xpath")) {
@@ -110,13 +120,13 @@ public class BaseTest
 	public static void type(String locatorKey, String value) 
 	{
 		//driver.findElement(By.name(mainProp.getProperty(locatorKey))).sendKeys(value);
-		getElement(locatorKey).sendKeys(value);
+		getElement(locatorKey).sendKeys(mainProp.getProperty(value));
 	}
 
 	public static void selectOption(String locatorKey, String option) 
 	{
 		//driver.findElement(By.id(mainProp.getProperty(locatorKey))).sendKeys(option);
-		getElement(locatorKey).sendKeys(option);
+		getElement(locatorKey).sendKeys(mainProp.getProperty(option));
 	}
 	
 
