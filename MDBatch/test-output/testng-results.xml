@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="18957" started-at="2020-03-18T06:26:13Z" finished-at="2020-03-18T06:26:32Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="18957" started-at="2020-03-18T06:26:13Z" finished-at="2020-03-18T06:26:32Z">
+      <class name="com.testng.NG_003">
+        <test-method status="PASS" signature="startProcess()[pri:0, instance:com.testng.NG_003@3f197a46]" name="startProcess" is-config="true" duration-ms="78" started-at="2020-03-18T06:26:13Z" finished-at="2020-03-18T06:26:13Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startProcess -->
+        <test-method status="PASS" signature="amazonTest()[pri:0, instance:com.testng.NG_003@3f197a46]" name="amazonTest" duration-ms="17341" started-at="2020-03-18T06:26:13Z" finished-at="2020-03-18T06:26:30Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- amazonTest -->
+        <test-method status="PASS" signature="endProcess()[pri:0, instance:com.testng.NG_003@3f197a46]" name="endProcess" is-config="true" duration-ms="1516" started-at="2020-03-18T06:26:30Z" finished-at="2020-03-18T06:26:32Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- endProcess -->
+      </class> <!-- com.testng.NG_003 -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
