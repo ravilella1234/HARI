@@ -1,25 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" ignored="0" total="6" passed="6">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="18957" started-at="2020-03-18T06:26:13Z" finished-at="2020-03-18T06:26:32Z">
+  <suite name="SuiteD" duration-ms="15103" started-at="2020-03-19T06:28:40Z" finished-at="2020-03-19T06:28:55Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="18957" started-at="2020-03-18T06:26:13Z" finished-at="2020-03-18T06:26:32Z">
-      <class name="com.testng.NG_003">
-        <test-method status="PASS" signature="startProcess()[pri:0, instance:com.testng.NG_003@3f197a46]" name="startProcess" is-config="true" duration-ms="78" started-at="2020-03-18T06:26:13Z" finished-at="2020-03-18T06:26:13Z">
+    <test name="TestD" duration-ms="15103" started-at="2020-03-19T06:28:40Z" finished-at="2020-03-19T06:28:55Z">
+      <class name="suiteD.TestD3">
+        <test-method status="PASS" signature="testD3()[pri:0, instance:suiteD.TestD3@7a30d1e6]" name="testD3" duration-ms="5005" started-at="2020-03-19T06:28:45Z" finished-at="2020-03-19T06:28:50Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- startProcess -->
-        <test-method status="PASS" signature="amazonTest()[pri:0, instance:com.testng.NG_003@3f197a46]" name="amazonTest" duration-ms="17341" started-at="2020-03-18T06:26:13Z" finished-at="2020-03-18T06:26:30Z">
+        </test-method> <!-- testD3 -->
+      </class> <!-- suiteD.TestD3 -->
+      <class name="suiteD.TestD2">
+        <test-method status="PASS" signature="testD2()[pri:0, instance:suiteD.TestD2@5891e32e]" name="testD2" duration-ms="5003" started-at="2020-03-19T06:28:50Z" finished-at="2020-03-19T06:28:55Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- amazonTest -->
-        <test-method status="PASS" signature="endProcess()[pri:0, instance:com.testng.NG_003@3f197a46]" name="endProcess" is-config="true" duration-ms="1516" started-at="2020-03-18T06:26:30Z" finished-at="2020-03-18T06:26:32Z">
+        </test-method> <!-- testD2 -->
+      </class> <!-- suiteD.TestD2 -->
+      <class name="suiteD.TestD1">
+        <test-method status="PASS" signature="testD1()[pri:0, instance:suiteD.TestD1@553a3d88]" name="testD1" duration-ms="5024" started-at="2020-03-19T06:28:40Z" finished-at="2020-03-19T06:28:45Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- endProcess -->
-      </class> <!-- com.testng.NG_003 -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+        </test-method> <!-- testD1 -->
+      </class> <!-- suiteD.TestD1 -->
+    </test> <!-- TestD -->
+  </suite> <!-- SuiteD -->
+  <suite name="megasuite" duration-ms="0" started-at="2020-03-19T06:28:55Z" finished-at="2020-03-19T06:28:55Z">
+    <groups>
+    </groups>
+  </suite> <!-- megasuite -->
+  <suite name="SuiteC" duration-ms="15103" started-at="2020-03-19T06:28:40Z" finished-at="2020-03-19T06:28:55Z">
+    <groups>
+    </groups>
+    <test name="TestC" duration-ms="15103" started-at="2020-03-19T06:28:40Z" finished-at="2020-03-19T06:28:55Z">
+      <class name="suiteC.TestC1">
+        <test-method status="PASS" signature="testC1()[pri:0, instance:suiteC.TestC1@1e7c7811]" name="testC1" duration-ms="5024" started-at="2020-03-19T06:28:40Z" finished-at="2020-03-19T06:28:45Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testC1 -->
+      </class> <!-- suiteC.TestC1 -->
+      <class name="suiteC.TestC2">
+        <test-method status="PASS" signature="testC2()[pri:0, instance:suiteC.TestC2@77ec78b9]" name="testC2" duration-ms="5005" started-at="2020-03-19T06:28:45Z" finished-at="2020-03-19T06:28:50Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testC2 -->
+      </class> <!-- suiteC.TestC2 -->
+      <class name="suiteC.TestC3">
+        <test-method status="PASS" signature="testC3()[pri:0, instance:suiteC.TestC3@1a3869f4]" name="testC3" duration-ms="5004" started-at="2020-03-19T06:28:50Z" finished-at="2020-03-19T06:28:55Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testC3 -->
+      </class> <!-- suiteC.TestC3 -->
+    </test> <!-- TestC -->
+  </suite> <!-- SuiteC -->
 </testng-results>

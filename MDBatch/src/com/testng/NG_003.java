@@ -6,19 +6,27 @@ import com.launch.BaseTest;
 import com.relevantcodes.extentreports.LogStatus;
 
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.AfterMethod;
 
 public class NG_003 extends BaseTest
 {
 	
   @BeforeMethod
-  public void startProcess() throws Exception
+  @Parameters("browser")
+  public void startProcess(String bType) throws Exception
   {
 	  System.out.println("iam beforeMethod");
 	  test=report.startTest("NG_003");
 		
 	  init();
 	  test.log(LogStatus.INFO, "Initilizing the properties files.....");
+	  
+	  	browserLaunch(bType);
+		test.log(LogStatus.INFO, "Opened the browser : - " + p.getProperty("chromebrowser"));
+		
+		navigateUrl("amazonurl");
+		test.log(LogStatus.INFO, "Navigated to url :- " + subProp.getProperty("amazonurl"));
   }
 	
 	
@@ -26,11 +34,7 @@ public class NG_003 extends BaseTest
   public void amazonTest() 
   {
 	  System.out.println("iam testMethod");
-	  	browserLaunch("chromebrowser");
-		test.log(LogStatus.INFO, "Opened the browser : - " + p.getProperty("chromebrowser"));
-		
-		navigateUrl("amazonurl");
-		test.log(LogStatus.INFO, "Navigated to url :- " + subProp.getProperty("amazonurl"));
+	  	
 		
 		selectOption("amazondropbox_id","dropvalue");
 		test.log(LogStatus.INFO, "Selected the option :- " + mainProp.getProperty("dropvalue") + " by using locator :- " + mainProp.getProperty("amazondropbox_id"));
