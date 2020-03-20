@@ -3,13 +3,14 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.testng.RadioButton1">
+      <class name="com.testng.TestDependency">
         <methods>
-          <include name="RadioButtonTest"/>
-          <include name="afterMethod"/>
-          <include name="beforeMethod"/>
+          <include name="white"/>
+          <include name="blue"/>
+          <include name="green"/>
+          <include name="orange"/>
         </methods>
-      </class> <!-- com.testng.RadioButton1 -->
+      </class> <!-- com.testng.TestDependency -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

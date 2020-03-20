@@ -12,7 +12,7 @@ import org.testng.annotations.AfterMethod;
 public class NG_003 extends BaseTest
 {
 	
-  @BeforeMethod
+  @BeforeMethod(groups = {"regression","sanity"})
   @Parameters("browser")
   public void startProcess(String bType) throws Exception
   {
@@ -30,7 +30,7 @@ public class NG_003 extends BaseTest
   }
 	
 	
-  @Test
+  @Test(groups = {"regression","sanity"})
   public void amazonTest() 
   {
 	  System.out.println("iam testMethod");
@@ -47,7 +47,7 @@ public class NG_003 extends BaseTest
   }
   
   
-  @AfterMethod
+  @AfterMethod(groups = {"regression","sanity"})
   public void endProcess() 
   {
 	  System.out.println("iam afterMethod");

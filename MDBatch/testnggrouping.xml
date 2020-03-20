@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="SuiteGroup">
+
+ <groups>
+ 	<run>
+ 		<include name="sanity"></include>
+ 	</run>
+ </groups>
+
+
+  <test thread-count="5" name="TestGroup">
+  <parameter name="browser" value="chrome"></parameter>
+    <classes>
+      <class name="com.testng.CheckBox1"/>
+      <class name="com.testng.LinksTesting1"/>
+      <class name="com.testng.RadioButton1"/>
+      <class name="com.testng.NG_003"/>
+    </classes>
+  </test> <!-- TestGroup -->
+</suite> <!-- SuiteGroup -->
